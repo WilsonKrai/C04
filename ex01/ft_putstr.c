@@ -3,14 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wteles-d <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: wteles-d <wteles-d@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 16:22:04 by wteles-d          #+#    #+#             */
-/*   Updated: 2023/03/16 16:30:36 by wteles-d         ###   ########.fr       */
+/*   Updated: 2023/03/21 16:01:44 by wteles-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
 #include <unistd.h>
 
 void	ft_putstr(char *str)
@@ -27,8 +26,7 @@ void	ft_putstr(char *str)
 /*
 int	main(void)
 {
-	char	t1[] = "test this string";
-
-	putstr(t1);
+	char	s[] = "test tjsokadnom somdas asdads    12387 1093 y108 31";
+	ft_putstr(s);
 }
 */

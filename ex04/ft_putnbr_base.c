@@ -6,12 +6,11 @@
 /*   By: wteles-d <wteles-d@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/19 14:47:10 by wteles-d          #+#    #+#             */
-/*   Updated: 2023/03/19 17:03:03 by wteles-d         ###   ########.fr       */
+/*   Updated: 2023/03/21 16:11:47 by wteles-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-#include <stdio.h>
 
 void	my_putchar(char c)
 {
@@ -29,12 +28,12 @@ int	check_base_size_and_errors(char *s1)
 	{
 		if (s1[j] == '+' || s1[j] == '-')
 			return (1);
-		k = j;
+		k = j + 1;
 		while (s1[k] != '\0')
 		{
-			k++;
 			if (s1[j] == s1[k])
 				return (1);
+			k++;
 		}
 		j++;
 	}
@@ -45,29 +44,41 @@ int	check_base_size_and_errors(char *s1)
 
 void	ft_putnbr_base(int nbr, char *base)
 {
-	int	i;
-	int	baselen;
+	int				i;
+	int				baselen;
+	long			longnbr;
 
 	i = 0;
+	longnbr = (long)nbr;
 	baselen = check_base_size_and_errors(base);
 	if (baselen <= 1)
-		return;
-	if (nbr > baselen)
-		ft_putnbr_base(nbr / baselen, base);
+		return ;
+	if (longnbr == -2147483648)
+	{
+		my_putchar('-');
+		longnbr = 2147483648;
+	}
+	if (longnbr > baselen)
+		ft_putnbr_base(longnbr / baselen, base);
 	else if (nbr < 0)
 	{
-		nbr = nbr * (-1);
-		write(1, "-", 1);
-		ft_putnbr_base(nbr / baselen, base);
+		longnbr = longnbr * (-1);
+		my_putchar('-');
+		ft_putnbr_base(longnbr / baselen, base);
 	}
-	my_putchar(base[nbr % baselen]);
+	my_putchar(base[longnbr % baselen]);
 }
+/*
+#include <stdio.h>
 
 int	main(void)
 {
 	int	x;
 	char	h[100];
+	printf("Number: ");
 	scanf("%d", &x);
+	printf("Base: ");
 	scanf("%s", h);
 	ft_putnbr_base(x, h);
 }
+*/

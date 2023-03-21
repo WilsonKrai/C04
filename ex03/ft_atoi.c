@@ -6,12 +6,9 @@
 /*   By: wteles-d <wteles-d@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 16:36:08 by wteles-d          #+#    #+#             */
-/*   Updated: 2023/03/19 14:43:19 by wteles-d         ###   ########.fr       */
+/*   Updated: 2023/03/21 15:13:54 by wteles-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stdlib.h>
-#include <stdio.h>
 
 int	find_neg(char *sn)
 {
@@ -23,7 +20,7 @@ int	find_neg(char *sn)
 	while (sn[j] != '\0' && (!(sn[j] <= 58 && sn[j] >= 47)))
 	{
 		if (sn[j] == '-')
-			h = h * (-1);
+			h = -h;
 		j++;
 	}
 	return (h);
@@ -68,10 +65,15 @@ int	ft_atoi(char *str)
 	return (total);
 }
 /*
+#include <stdio.h>
+#include <stdlib.h>
+
 int	main(void)
 {	
 	char	t1[100];
+	printf("Input string: ");
 	scanf("%s", t1);
 	printf("%d\n", ft_atoi(t1));
+	printf("%d\n", atoi(t1));
 }
 */

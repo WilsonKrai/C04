@@ -6,7 +6,7 @@
 /*   By: wteles-d <wteles-d@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 16:33:08 by wteles-d          #+#    #+#             */
-/*   Updated: 2023/03/16 16:35:12 by wteles-d         ###   ########.fr       */
+/*   Updated: 2023/03/20 16:04:56 by wteles-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,3 @@ void	printchar(char a)
 {
 	write(1, &a, 1);
 }
-/*
-int	main(void)
-{
-	ft_putnbr(-24482);
-}
-*/
