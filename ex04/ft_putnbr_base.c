@@ -6,7 +6,7 @@
 /*   By: wteles-d <wteles-d@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/19 14:47:10 by wteles-d          #+#    #+#             */
-/*   Updated: 2023/03/21 16:11:47 by wteles-d         ###   ########.fr       */
+/*   Updated: 2023/03/21 18:04:05 by wteles-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,14 +58,13 @@ void	ft_putnbr_base(int nbr, char *base)
 		my_putchar('-');
 		longnbr = 2147483648;
 	}
-	if (longnbr > baselen)
-		ft_putnbr_base(longnbr / baselen, base);
-	else if (nbr < 0)
+	if (longnbr < 0)
 	{
 		longnbr = longnbr * (-1);
 		my_putchar('-');
-		ft_putnbr_base(longnbr / baselen, base);
 	}
+	if (longnbr > baselen)
+		ft_putnbr_base(longnbr / baselen, base);
 	my_putchar(base[longnbr % baselen]);
 }
 /*
